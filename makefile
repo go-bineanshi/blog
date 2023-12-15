@@ -1,11 +1,12 @@
 push:
-	@scp -r docs/.vitepress/dist/ $USER:/home/ecs-user/blog
-	@scp docker-compose.yaml $USER:/home/ecs-user/docker-compose.blog.yaml
+	@ssh ${USER} 'rm -rf /home/ecs-user/blog'
+	@scp -r docs/.vitepress/dist/ ${USER}:/home/ecs-user/blog
+	@scp docker-compose.yaml ${USER}:/home/ecs-user/docker-compose.blog.yaml
 build:
 	@yarn docs:build
-	@scp -r docs/.vitepress/dist/ $USER:/home/ecs-user/blog
+	@scp -r docs/.vitepress/dist/ ${USER}:/home/ecs-user/blog
 	@rm -rf docs/.vitepress/dist/
 start:
-	@docker stack deploy -c docker-compose.blog.yaml blog
+	@ssh ${USER} 'docker stack deploy -c docker-compose.blog.yaml blog'
 stop:
-	@docker stack rm blog
+	@ssh ${USER} 'docker stack rm blog'

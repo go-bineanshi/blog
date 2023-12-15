@@ -4,8 +4,8 @@ layout: home
 
 hero:
   name: "快乐学习每一天"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  text: "专注 & 洞察 & 分享"
+  tagline: 个人技术知识库，记录 & 分享个人碎片化、结构化、体系化的技术知识内容。
   actions:
     - theme: brand
       text: Markdown Examples

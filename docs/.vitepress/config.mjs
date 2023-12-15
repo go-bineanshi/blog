@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "快乐学习每一天",
-  description: "A VitePress Site",
+  description: "专注 & 洞察 & 分享",
   themeConfig: {
     logo: '/img/logo.png',
     // https://vitepress.dev/reference/default-theme-config
