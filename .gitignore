@@ -1,0 +1,13 @@
+node_modules
+# MacOS Desktop Services Store
+.DS_Store
+
+# Log files
+*.log
+
+# IDE setting files
+.idea
+.vscode
+
+# Temp files
+cache/
