@@ -5,9 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  viewerjs:
+    specifier: ^1.11.6
+    version: 1.11.6
   vitepress-plugin-back-to-top:
     specifier: ^1.0.1
     version: 1.0.1
+  vitepress-plugin-codeblocks-fold:
+    specifier: ^1.2.28
+    version: 1.2.28
   vitepress-plugin-image-viewer:
     specifier: ^1.1.2
     version: 1.1.2
@@ -1191,6 +1197,10 @@ packages:
       vue: 3.3.11
     transitivePeerDependencies:
       - typescript
+    dev: false
+
+  /vitepress-plugin-codeblocks-fold@1.2.28:
+    resolution: {integrity: sha512-ilckzzYmTIv3A9t4xiCSsTcYCfzCFzlsycV9nDtgvRTuk7Fy1lNHMZgPOk6ysB7PLFG/R71HsgQC44AZZKL8cw==}
     dev: false
 
   /vitepress-plugin-image-viewer@1.1.2:
