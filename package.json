@@ -1,11 +1,16 @@
 {
   "license": "MIT",
   "devDependencies": {
+    "sass": "^1.69.5",
     "vitepress": "1.0.0-rc.31"
   },
   "scripts": {
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "vitepress-plugin-back-to-top": "^1.0.1",
+    "vitepress-plugin-image-viewer": "^1.1.2"
   }
 }
