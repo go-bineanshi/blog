@@ -53,7 +53,7 @@ export default defineConfig({
     footerConfig: {
       showFooter: true, // 是否显示页脚
       icpRecordCode: '苏ICP备19067404号-1', // ICP备案号
-      // publicSecurityRecordCode: '津公网安备12011202000677号', // 联网备案号
+      publicSecurityRecordCode: '苏公网安备32060102320699号', // 联网备案号
       copyright: `Copyright © 2021-${new Date().getFullYear()} bineanshi` // 版权信息
     },
     search: {
