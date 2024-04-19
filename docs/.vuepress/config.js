@@ -22,37 +22,46 @@ export default defineUserConfig({
         children: [
           { text: "Multipass", link: "/pages/container/multipass.md" },
         ],
-      }
+      },
+      {
+        text: '编程',
+        children: [
+          {
+            text: 'Ruby 极简教程',
+            link: '/pages/ruby/install.md'
+          }
+        ],
+      },
     ],
+    sidebar: {
+      '/pages/container/': [
+        {
+          text: "虚拟机",
+          children: [
+            { text: "Multipass", link: "/pages/container/multipass.md" },
+          ],
+        },
+      ],
+      '/pages/ruby/': [
+        {
+          text: 'Ruby 极简教程',
+          collapsible: true,
+          children: [
+            '/pages/ruby/install.md',
+            { 
+              text: "应用",
+              children: [
+                '/pages/ruby/rails.md',
+              ]
+            }
+          ]
+        }
+      ]
+    }
   }),
 
   plugins: [
-    blogPlugin({
-      // Only files under posts are articles
-      filter: ({ filePathRelative }) =>
-        filePathRelative ? filePathRelative.startsWith('pages/') : false,
-
-      // Getting article info
-      getInfo: ({ frontmatter, title, data }) => ({
-        title,
-        author: frontmatter.author || '',
-        date: frontmatter.date || null,
-        category: frontmatter.category || [],
-        tag: frontmatter.tag || [],
-        excerpt:
-          // Support manually set excerpt through frontmatter
-          typeof frontmatter.excerpt === 'string'
-            ? frontmatter.excerpt
-            : data?.excerpt || '',
-      }),
-
-      // Generate excerpt for all pages excerpt those users choose to disable
-      excerptFilter: ({ frontmatter }) =>
-        !frontmatter.home &&
-        frontmatter.excerpt !== false &&
-        typeof frontmatter.excerpt !== 'string',
-      hotReload: true,
-    }),
+  
   ],
 
   bundler: viteBundler(),
