@@ -8,7 +8,10 @@ export default defineUserConfig({
   base: '/', 
   title: '快乐学习每一天',
   description: "bineanshi's blog",
-
+  head: [
+    ['link', { rel: 'icon', href: 'http://blog.qiniu.g-bill.club/blog/logo.png' }],
+    ["meta", { name:"referrer", content:"no-referrer"}]
+  ],
   theme: defaultTheme({
     logo: 'http://blog.qiniu.g-bill.club/blog/logo.png',
 

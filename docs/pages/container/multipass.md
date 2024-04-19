@@ -4,7 +4,7 @@
 
 ## 安装
 
-1. 方式一： 直接下载官方安装包： [Download Multipass for MacOS](https://multipass.run/install)
+1. 方式一： 直接下载官方安装包： [Download Multipass for MacOS](http://multipass.run/install)
 
 2. 方式二： 使用 Homebrew 安装：
 
