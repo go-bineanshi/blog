@@ -1,6 +1,6 @@
 ---
 home: true
-title: Home
+title: 首页
 heroImage: ./images/logo.png
 
 footer:
