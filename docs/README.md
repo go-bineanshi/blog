@@ -1,7 +1,7 @@
 ---
 home: true
 title: 首页
-heroImage: http://blog.qiniu.g-bill.club/blog/logo.png
+heroImage: https://blog.qiniu.g-bill.club/blog/logo.png
 
 footer:
   <a href="https://beian.miit.gov.cn" target="_blank" data-v-083e1a9c="">苏ICP备19067404号-1</a> |
