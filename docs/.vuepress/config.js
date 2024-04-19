@@ -10,7 +10,7 @@ export default defineUserConfig({
   description: "bineanshi's blog",
 
   theme: defaultTheme({
-    logo: './images/logo.png',
+    logo: 'http://blog.qiniu.g-bill.club/blog/logo.png',
 
     navbar: [
       '/',

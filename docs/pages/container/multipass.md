@@ -19,7 +19,7 @@ multipass --version
 ```
 
 输出结果如下：
-![multipass --version](./multipass-version.png)
+![multipass --version](http://blog.qiniu.g-bill.club/blog/multipass-version.png)
 
 ## 创建 Ubuntu 虚拟机
 
@@ -30,7 +30,7 @@ multipass find
 ```
 
 运行成功后，可以看到下面的镜像列表，包含各种版本：
-![multipass find](./multipass-find.png)
+![multipass find](http://blog.qiniu.g-bill.club/blog/multipass-find.png)
 
 启动一个容器: 初次创建时需要下载 ubunut 镜像
 
@@ -55,7 +55,7 @@ multipass list
 ```
 
 输出：
-![multipass list](./multipass-list.png)
+![multipass list](http://blog.qiniu.g-bill.club/blog/multipass-list.png)
 
 ### 2. 外部操作虚拟机
 
@@ -65,7 +65,7 @@ multipass exec vm01 pwd
 ```
 
 输出：
-![multipass exec](./multipass-exec.png)
+![multipass exec](http://blog.qiniu.g-bill.club/blog/multipass-exec.png)
 
 ### 3. 查看虚拟机信息
 
@@ -74,7 +74,7 @@ multipass info vm01
 ```
 
 输出：
-![multipass info](./multipass-info.png)
+![multipass info](http://blog.qiniu.g-bill.club/blog/multipass-info.png)
 
 ### 4. 进入虚拟机
 
@@ -83,7 +83,7 @@ multipass shell vm01
 ```
 
 输出：
-![multipass shell](./multipass-shell.png)
+![multipass shell](http://blog.qiniu.g-bill.club/blog/multipass-shell.png)
 
 ### 4. 数据卷
 
