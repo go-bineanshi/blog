@@ -11,7 +11,7 @@ gem install rails
 默认的 bundle 从外网下载，会出现 unkownhost 的问题，添加一个国内源即可
 
 ```bash
-bundle config mirror.https://rubygems.org https://gems.ruby-china.org
+bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 ```
 
 ## 2. 创建项目 & 启动

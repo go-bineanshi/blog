@@ -83,6 +83,14 @@ rbenv global 2.7.2
 gem install bundler
 ```
 
+### 注：PS
+
+默认的 bundle 从外网下载，会出现 unkownhost 的问题，添加一个国内源即可
+
+```bash
+bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+```
+
 ## 6. 验证安装
 
 ```bash
