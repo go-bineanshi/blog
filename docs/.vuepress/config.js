@@ -32,6 +32,15 @@ export default defineUserConfig({
           }
         ],
       },
+      {
+        text: '运维',
+        children: [
+          {
+            text: 'Nginx 极简教程',
+            link: '/pages/deploy/nginx.md'
+          }
+        ],
+      },
     ],
     sidebar: {
       '/pages/container/': [
@@ -56,6 +65,14 @@ export default defineUserConfig({
             }
           ]
         }
+      ],
+      '/pages/deploy/': [
+        {
+          text: "运维",
+          children: [
+            { text: "Nginx", link: '/pages/deploy/nginx.md' },
+          ],
+        },
       ]
     }
   }),
