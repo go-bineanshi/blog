@@ -32,7 +32,7 @@ export default defineUserConfig({
           },
           {
             text: '转载 Hotwired ATS',
-            link: '/pages/ruby/hotwiringrails.md'
+            link: '/pages/ruby/hotwiringrails/chapter1.md'
           }
         ],
       },
