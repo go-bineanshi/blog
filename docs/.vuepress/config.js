@@ -29,6 +29,10 @@ export default defineUserConfig({
           {
             text: 'Ruby 极简教程',
             link: '/pages/ruby/install.md'
+          },
+          {
+            text: '转载 Hotwired ATS',
+            link: '/pages/ruby/hotwiringrails.md'
           }
         ],
       },
@@ -61,6 +65,22 @@ export default defineUserConfig({
               text: "应用",
               children: [
                 '/pages/ruby/rails.md',
+              ]
+            },
+            {
+              text: '转载 Hotwired ATS',
+              children: [
+                '/pages/ruby/hotwiringrails/chapter1.md',
+                '/pages/ruby/hotwiringrails/chapter2.md',
+                '/pages/ruby/hotwiringrails/chapter3.md',
+                '/pages/ruby/hotwiringrails/chapter4.md',
+                '/pages/ruby/hotwiringrails/chapter5.md',
+                '/pages/ruby/hotwiringrails/chapter6.md',
+                '/pages/ruby/hotwiringrails/chapter7.md',
+                '/pages/ruby/hotwiringrails/chapter8.md',
+                '/pages/ruby/hotwiringrails/chapter9.md',
+                '/pages/ruby/hotwiringrails/chapter10.md',
+                '/pages/ruby/hotwiringrails/chapter11.md',
               ]
             }
           ]

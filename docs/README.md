@@ -5,8 +5,6 @@ heroText: bineanshi's blog
 heroImage: https://blog.qiniu.g-bill.club/blog/logo.png
 
 tagline: 积跬步以至千里，致敬每个爱学习的你。
-actionText: 立刻进入 →
-actionLink: /web/
 
 features: # 可选的
   - title: 编程
