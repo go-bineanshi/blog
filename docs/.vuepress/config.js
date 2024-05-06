@@ -90,11 +90,20 @@ export default defineUserConfig({
           ]
         }
       ],
-      '/pages/deploy/': [
+      '/pages/nginx/': [
         {
           text: "运维",
           children: [
-            { text: "Nginx", link: '/pages/deploy/nginx.md' },
+            { text: "Nginx", link: '/pages/nginx/nginx.md' },
+          ],
+        },
+      ],
+      '/pages/elasticsearch/': [
+        {
+          text: "Elasticsearch",
+          children: [
+            { text: "elasticsearch", link: '/pages/elasticsearch/elasticsearch.md' },
+            { text: "简易部署", link: '/pages/elasticsearch/deploy.md' },
           ],
         },
       ]

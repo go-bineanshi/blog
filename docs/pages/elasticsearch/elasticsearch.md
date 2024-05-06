@@ -39,13 +39,7 @@
 
 ### 1.5 映射 (mapping) (表结构定义)
 
-每个索引都有一个对象的 Mapping。主要用于定义文档中的字段类型和属性，以及索引文档时自动检测字段类型并创建 Mapping
-
-- 字符串类型: keyword 关键字 关键词、 text 文本
-- 数字类型: integer long
-- 小数类型: float double
-- 日期类型: date
-- 布尔类型: boolean
+每个索引都有一个对象的 Mapping。主要用于定义文档中的字段类型和属性，以及索引文档时自动检测字段类型并创建 Mapping.
 
 ## 二. 分布式架构
 
@@ -338,7 +332,7 @@ PUT /products/_doc/_bulk
 > match_all 关键字： 返回索引中的全部文档
 
 ```
-GET /product/_search
+GET /products/_search
 {
     "query": {
         "match_all": {}
