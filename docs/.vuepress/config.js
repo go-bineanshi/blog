@@ -37,11 +37,15 @@ export default defineUserConfig({
         ],
       },
       {
-        text: '运维',
+        text: '其他',
         children: [
           {
             text: 'Nginx 极简教程',
             link: '/pages/deploy/nginx.md'
+          },
+          {
+            text: 'Elasticsearch',
+            link: '/pages/elasticsearch/elasticsearch.md'
           }
         ],
       },
