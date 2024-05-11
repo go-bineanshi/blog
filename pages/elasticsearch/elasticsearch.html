@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="generator" content="VuePress 2.0.0-rc.9" />
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html,
+      body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme')
+      const systemDarkMode =
+        window.matchMedia &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches
+      if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+        document.documentElement.classList.toggle('dark', true)
+      }
+    </script>
+    <link rel="icon" href="https://blog.qiniu.g-bill.club/blog/logo.png"><meta name="referrer" content="no-referrer"><title>Elasticsearch | 快乐学习每一天</title><meta name="description" content="bineanshi's blog">
+    <link rel="preload" href="/assets/style-DHA7nTkj.css" as="style"><link rel="stylesheet" href="/assets/style-DHA7nTkj.css">
+    <link rel="modulepreload" href="/assets/app-CCeybfeQ.js"><link rel="modulepreload" href="/assets/elasticsearch.html-DL_NQxlL.js">
+    <link rel="prefetch" href="/assets/index.html-CfhTaVEs.js" as="script"><link rel="prefetch" href="/assets/multipass.html-BEdxoNwS.js" as="script"><link rel="prefetch" href="/assets/nginx.html-ClFTRHJN.js" as="script"><link rel="prefetch" href="/assets/deploy.html-DX7DLpcj.js" as="script"><link rel="prefetch" href="/assets/install.html-yQumiGs4.js" as="script"><link rel="prefetch" href="/assets/rails.html-CG-rAFIM.js" as="script"><link rel="prefetch" href="/assets/oss_down.html-CcqGFVH2.js" as="script"><link rel="prefetch" href="/assets/chapter1.html-Cw9eOcfI.js" as="script"><link rel="prefetch" href="/assets/chapter10.html-D4WmRfHz.js" as="script"><link rel="prefetch" href="/assets/chapter11.html-j9Rwg6Jh.js" as="script"><link rel="prefetch" href="/assets/chapter2.html-BHxGb0tw.js" as="script"><link rel="prefetch" href="/assets/chapter3.html-C88-Uech.js" as="script"><link rel="prefetch" href="/assets/chapter4.html-BlgEjVHE.js" as="script"><link rel="prefetch" href="/assets/chapter5.html-ChBoEVOv.js" as="script"><link rel="prefetch" href="/assets/chapter6.html-BUswzlry.js" as="script"><link rel="prefetch" href="/assets/chapter7.html-BTm0aqAN.js" as="script"><link rel="prefetch" href="/assets/chapter8.html-CA-KIY2y.js" as="script"><link rel="prefetch" href="/assets/chapter9.html-ClcnkO_G.js" as="script"><link rel="prefetch" href="/assets/404.html-wXY812Ho.js" as="script">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a class="route-link" href="/"><img class="logo" src="https://blog.qiniu.g-bill.club/blog/logo.png" alt="快乐学习每一天"><span class="site-name can-hide" aria-hidden="true">快乐学习每一天</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><nav class="navbar-items can-hide" aria-label="site navigation"><!--[--><div class="navbar-item"><a class="route-link" href="/" aria-label="首页"><!--[--><!--[--><!--]--> 首页 <!--[--><!--]--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="虚拟机"><span class="title">虚拟机</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="虚拟机"><span class="title">虚拟机</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="route-link" href="/pages/container/multipass.html" aria-label="Multipass"><!--[--><!--[--><!--]--> Multipass <!--[--><!--]--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="编程"><span class="title">编程</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="编程"><span class="title">编程</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="route-link" href="/pages/ruby/install.html" aria-label="Ruby 极简教程"><!--[--><!--[--><!--]--> Ruby 极简教程 <!--[--><!--]--><!--]--></a></li><li class="navbar-dropdown-item"><a class="route-link" href="/pages/ruby/hotwiringrails/chapter1.html" aria-label="转载 Hotwired ATS"><!--[--><!--[--><!--]--> 转载 Hotwired ATS <!--[--><!--]--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="其他"><span class="title">其他</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="其他"><span class="title">其他</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="route-link" href="/pages/deploy/nginx.html" aria-label="Nginx 极简教程"><!--[--><!--[--><!--]--> Nginx 极简教程 <!--[--><!--]--><!--]--></a></li><li class="navbar-dropdown-item"><a class="route-link" href="/pages/elasticsearch/elasticsearch.html" aria-label="Elasticsearch"><!--[--><!--[--><!--]--> Elasticsearch <!--[--><!--]--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><nav class="navbar-items" aria-label="site navigation"><!--[--><div class="navbar-item"><a class="route-link" href="/" aria-label="首页"><!--[--><!--[--><!--]--> 首页 <!--[--><!--]--><!--]--></a></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="虚拟机"><span class="title">虚拟机</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="虚拟机"><span class="title">虚拟机</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="route-link" href="/pages/container/multipass.html" aria-label="Multipass"><!--[--><!--[--><!--]--> Multipass <!--[--><!--]--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="编程"><span class="title">编程</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="编程"><span class="title">编程</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="route-link" href="/pages/ruby/install.html" aria-label="Ruby 极简教程"><!--[--><!--[--><!--]--> Ruby 极简教程 <!--[--><!--]--><!--]--></a></li><li class="navbar-dropdown-item"><a class="route-link" href="/pages/ruby/hotwiringrails/chapter1.html" aria-label="转载 Hotwired ATS"><!--[--><!--[--><!--]--> 转载 Hotwired ATS <!--[--><!--]--><!--]--></a></li><!--]--></ul></div></div><div class="navbar-item"><div class="navbar-dropdown-wrapper"><button class="navbar-dropdown-title" type="button" aria-label="其他"><span class="title">其他</span><span class="arrow down"></span></button><button class="navbar-dropdown-title-mobile" type="button" aria-label="其他"><span class="title">其他</span><span class="right arrow"></span></button><ul style="display:none;" class="navbar-dropdown"><!--[--><li class="navbar-dropdown-item"><a class="route-link" href="/pages/deploy/nginx.html" aria-label="Nginx 极简教程"><!--[--><!--[--><!--]--> Nginx 极简教程 <!--[--><!--]--><!--]--></a></li><li class="navbar-dropdown-item"><a class="route-link" href="/pages/elasticsearch/elasticsearch.html" aria-label="Elasticsearch"><!--[--><!--[--><!--]--> Elasticsearch <!--[--><!--]--><!--]--></a></li><!--]--></ul></div></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active">Elasticsearch <!----></p><ul style="" class="sidebar-item-children"><!--[--><li><a class="route-link sidebar-item active" href="/pages/elasticsearch/elasticsearch.html" aria-label="elasticsearch"><!--[--><!--[--><!--]--> elasticsearch <!--[--><!--]--><!--]--></a><!----></li><li><a class="route-link sidebar-item" href="/pages/elasticsearch/deploy.html" aria-label="简易部署"><!--[--><!--[--><!--]--> 简易部署 <!--[--><!--]--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="elasticsearch" tabindex="-1"><a class="header-anchor" href="#elasticsearch"><span>Elasticsearch</span></a></h1><h2 id="一-组件" tabindex="-1"><a class="header-anchor" href="#一-组件"><span>一. 组件</span></a></h2><h3 id="_1-1-索引-index-数据库" tabindex="-1"><a class="header-anchor" href="#_1-1-索引-index-数据库"><span>1.1 索引 (index) (数据库)</span></a></h3><p>是一个包含了相关文档数据的集合，存数据的地方。索引可以包含多个类型 (type)，每个类型代表一个类似数据库中的表。</p><h4 id="_1-1-1-创建" tabindex="-1"><a class="header-anchor" href="#_1-1-1-创建"><span>1.1.1 创建</span></a></h4><div class="language-bash line-numbers-mode" data-ext="sh" data-title="sh"><pre class="language-bash"><code><span class="token comment"># 1. 创建默认索引</span>
+- PUT /索引名  <span class="token operator">==</span><span class="token operator">==</span><span class="token operator">&gt;</span> PUT /products
+- 注意：
+    <span class="token number">1</span>. ES 中索引健康状态  red<span class="token punctuation">(</span>索引不可用<span class="token punctuation">)</span>,yellwo<span class="token punctuation">(</span>索引可用,存在风险<span class="token punctuation">)</span>,green<span class="token punctuation">(</span>健康<span class="token punctuation">)</span>
+    <span class="token number">2</span>. 默认ES在创建索引时会默认创建1个主分片和1个副本分片
+
+<span class="token comment"># 2. 创建索引 进行索引分片配置</span>
+- PUT /索引名
+<span class="token punctuation">{</span>
+    <span class="token string">&quot;settings&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+        <span class="token string">&quot;number_of_shards&quot;</span><span class="token builtin class-name">:</span> <span class="token number">1</span>,  <span class="token comment"># 主分片</span>
+        <span class="token string">&quot;number_of_replicas&quot;</span><span class="token builtin class-name">:</span> <span class="token number">0</span> <span class="token comment"># 副本分片</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-2-类型-type-表" tabindex="-1"><a class="header-anchor" href="#_1-2-类型-type-表"><span>1.2 类型 (type) (表)</span></a></h3><p>用来定义数据结构，是在索引中对文档进行分类的一种方式。每个类型都有自己的映射(Mapping),定义了文档中包含的字段和他们的类型。</p><h3 id="_1-3-文档-document-行" tabindex="-1"><a class="header-anchor" href="#_1-3-文档-document-行"><span>1.3 文档 (document) (行)</span></a></h3><p>是存储在索引(index)中的基本数据单位(最小)，一个文档就是一条记录。类似于 Mysql 中的一行。每个文档都是一个 JSON 格式的数据对象，它包含了实际的数据</p><h3 id="_1-4-字段-field-列" tabindex="-1"><a class="header-anchor" href="#_1-4-字段-field-列"><span>1.4 字段 (field) (列)</span></a></h3><p>一个 document 由多个 field 组成，每个 field 都有一个名称和值，一个 field 就是一个列。</p><h3 id="_1-5-映射-mapping-表结构定义" tabindex="-1"><a class="header-anchor" href="#_1-5-映射-mapping-表结构定义"><span>1.5 映射 (mapping) (表结构定义)</span></a></h3><p>每个索引都有一个对象的 Mapping。主要用于定义文档中的字段类型和属性，以及索引文档时自动检测字段类型并创建 Mapping.</p><h2 id="二-分布式架构" tabindex="-1"><a class="header-anchor" href="#二-分布式架构"><span>二. 分布式架构</span></a></h2><p>它允许数据存储和处理在多个节点上分布，并能够处理大规模的数据量</p><ul><li>节点(node): 每个节点是一个独立的 Elasticsearch 实例，可以运行在单独的服务器上，也可以在同一台物理服务器上运行多个节点</li><li>集群(Cluster): 一个或多个节点可以组成一个 Elasticsearch 集群，他们共享数据和协调任务。单个节点只能属于一个集群</li><li>分片(Shard): 将数据分成多个分片，每个分片是一个独立的索引单元，包含索引的一部分数据。分片可以分布在不同的节点上，是的数据能够水平扩展</li><li>副本(Replica): 每个分片可以有零个或多个副本，副本是分片的拷贝。副本提供了数据的冗余备份和容错机制，并能够提高搜索性能。</li><li>Master 节点: 集群中有一个或多个节点被选举为主节点(Master node),主节点负责集群范围内的管理任务，如创建和删除索引、分片的分配等</li><li>协调节点(Coordinator Node): 在搜索请求到达时，协调节点负责协调请求的路由和分发。它不存储数据，专注于请求的转发。</li><li>数据节点(Data Node): 负责存储数据的节点，他们承载索引分片和处理搜索请求。</li></ul><h2 id="三-倒排索引" tabindex="-1"><a class="header-anchor" href="#三-倒排索引"><span>三. 倒排索引</span></a></h2><p>倒排索引的基本原理是，对于每个文档，遍历文档中的每个单词，将单词与包含该单词的文档进行关联。这样就可以快速地根据单词来查找包含该单词的文档列表，倒排索引时通过词项词典和倒排列表来实现的：</p><h3 id="_3-1-词项词典" tabindex="-1"><a class="header-anchor" href="#_3-1-词项词典"><span>3.1 词项词典</span></a></h3><p>包含了所有文档中出现过的单词+指向倒排列表的指针。</p><h3 id="_3-2-倒排列表" tabindex="-1"><a class="header-anchor" href="#_3-2-倒排列表"><span>3.2 倒排列表</span></a></h3><p>包含了每个单词的文档 ID 列表+文档中的位置等信息</p><p>使用倒排索引进行数据检索的步骤如下： 1）创建索引：首先需要将数据存储到 Elasticsearch 中，并创建相应的索引 2）插入文档：将文档插入到索引中，Elasticsearch 会自动构建倒排索引 3）查询数据：用户提交查询请求时，Elasticsearch 会对查询词项进行分析和标准化，然后通过倒排索引定位包含这些词项的文档，并返回查询结果</p><h2 id="四-存储原理" tabindex="-1"><a class="header-anchor" href="#四-存储原理"><span>四. 存储原理</span></a></h2><p>是基于倒排索引和分布式存储的结合，使得他能够高效地存储和检索大规模的数据。 倒排索引时一种数据结构，它将文档中的每个词条与其出现的位置进行关联，从而可以快速地进行全文检索。数据被分片存储在多个节点上，每个节点都有自己的倒排索引。当索引一个文档时，Elasticsearch 会将文档分割成多个词条，并将每个词条存储在相应的倒排索引中</p><h2 id="五-存储步骤" tabindex="-1"><a class="header-anchor" href="#五-存储步骤"><span>五. 存储步骤</span></a></h2><p>1） 创建索引 在 Elasticsearch 中，数据存储在索引(表)中(文档存储在索引中)。要存储数据，首先要创建一个索引 2） 定义映射 在创建索引时，通常需要定义数据的映射。映射定义了索引中的字段以及他们的数据类型。 3） 索引文档 一旦索引和映射定义好了，就可以开始将文档存储到 Elasticsearch 中。文档是实际存储的数据记录。他们以 JSON 格式表示，并被存储在索引中。</p><h2 id="六-基础使用" tabindex="-1"><a class="header-anchor" href="#六-基础使用"><span>六. 基础使用</span></a></h2><h3 id="_6-1-索引" tabindex="-1"><a class="header-anchor" href="#_6-1-索引"><span>6.1 索引</span></a></h3><h4 id="_6-1-1-创建索引-映射" tabindex="-1"><a class="header-anchor" href="#_6-1-1-创建索引-映射"><span>6.1.1 创建索引&amp;映射</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>PUT /products
+{
+    &quot;settings&quot;: {
+        &quot;number_of_shards&quot;: 1,
+        &quot;number_of_replicas&quot;: 0
+    },
+    &quot;mappings&quot;: {
+        &quot;properties&quot;: {
+            &quot;title&quot;: {
+                &quot;type&quot;: &quot;keyword&quot;
+            },
+            &quot;price&quot;: {
+                &quot;type&quot;: &quot;double&quot;
+            },
+            &quot;created_at&quot;: {
+                &quot;type&quot;: &quot;date&quot;,
+            },
+            &quot;description&quot;: {
+                &quot;type&quot;: &quot;text&quot;
+            }
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://blog.qiniu.g-bill.club/blog/202405061048408.png" alt="create"></p><p>PS: 支持<a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.15/mapping-types.html" target="_blank" rel="noopener noreferrer">字段类型<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></p><h4 id="_6-1-2-查询" tabindex="-1"><a class="header-anchor" href="#_6-1-2-查询"><span>6.1.2 查询</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code># 查询索引
+- GET /_cat/indices?v
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://blog.qiniu.g-bill.club/blog/202405061050950.png" alt="cat_indices"></p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code># 查看某个索引的映射
+- GET /索引名/_mapping   =====&gt; GET /products/_mapping
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://blog.qiniu.g-bill.club/blog/202405061051600.png" alt="index_mapping"></p><h4 id="_6-1-3-删除" tabindex="-1"><a class="header-anchor" href="#_6-1-3-删除"><span>6.1.3 删除</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code># 删除索引
+- DELETE /索引名 =====&gt; DELETE /products
+
+- DELETE /*  # *代表通配符，代表所有索引，删除所有索引
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="https://blog.qiniu.g-bill.club/blog/202405061052118.png" alt="delete_index"></p><h3 id="_6-2-文档" tabindex="-1"><a class="header-anchor" href="#_6-2-文档"><span>6.2 文档</span></a></h3><h4 id="_6-2-1-添加" tabindex="-1"><a class="header-anchor" href="#_6-2-1-添加"><span>6.2.1 添加</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>- POST /索引名/_doc/1   =====&gt; POST /products/_doc/1 #指定文档ID
+{
+  &quot;title&quot;:&quot;iphone13&quot;,
+  &quot;price&quot;:8999.99,
+  &quot;created_at&quot;:&quot;2021-09-15&quot;,
+  &quot;description&quot;:&quot;iPhone 13屏幕采用6.1英寸OLED屏幕。&quot;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>- POST /索引名/_doc   =====&gt; POST /products/_doc/ #自动生成文档ID
+{
+  &quot;title&quot;:&quot;iphone14&quot;,
+  &quot;price&quot;:8999.99,
+  &quot;created_at&quot;:&quot;2021-09-15&quot;,
+  &quot;description&quot;:&quot;iPhone 13屏幕采用6.8英寸OLED屏幕&quot;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>返回：</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>{
+  &quot;_index&quot; : &quot;products&quot;,
+  &quot;_type&quot; : &quot;_doc&quot;,
+  &quot;_id&quot; : &quot;sjfYnXwBVVbJgt24PlVU&quot;,
+  &quot;_version&quot; : 1,
+  &quot;result&quot; : &quot;created&quot;,
+  &quot;_shards&quot; : {
+    &quot;total&quot; : 1,
+    &quot;successful&quot; : 1,
+    &quot;failed&quot; : 0
+  },
+  &quot;_seq_no&quot; : 3,
+  &quot;_primary_term&quot; : 1
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_6-2-2-查询文档" tabindex="-1"><a class="header-anchor" href="#_6-2-2-查询文档"><span>6.2.2 查询文档</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_doc/1
+
+# 返回
+{
+  &quot;_index&quot; : &quot;products&quot;,
+  &quot;_type&quot; : &quot;_doc&quot;,
+  &quot;_id&quot; : &quot;1&quot;,
+  &quot;_version&quot; : 1,
+  &quot;_seq_no&quot; : 0,
+  &quot;_primary_term&quot; : 1,
+  &quot;found&quot; : true,
+  &quot;_source&quot; : {
+    &quot;title&quot; : &quot;iphone13&quot;,
+    &quot;price&quot; : 8999.99,
+    &quot;created_at&quot; : &quot;2021-09-15&quot;,
+    &quot;description&quot; : &quot;iPhone 13屏幕采用6.1英寸OLED屏幕&quot;
+  }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_6-2-3-删除文档" tabindex="-1"><a class="header-anchor" href="#_6-2-3-删除文档"><span>6.2.3 删除文档</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>DELETE /products/_doc/1
+
+# 返回:
+{
+  &quot;_index&quot; : &quot;products&quot;,
+  &quot;_type&quot; : &quot;_doc&quot;,
+  &quot;_id&quot; : &quot;1&quot;,
+  &quot;_version&quot; : 2,
+  &quot;result&quot; : &quot;deleted&quot;,
+  &quot;_shards&quot; : {
+    &quot;total&quot; : 1,
+    &quot;successful&quot; : 1,
+    &quot;failed&quot; : 0
+  },
+  &quot;_seq_no&quot; : 2,
+  &quot;_primary_term&quot; : 1
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_6-2-4-更新文档" tabindex="-1"><a class="header-anchor" href="#_6-2-4-更新文档"><span>6.2.4 更新文档</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>PUT /products/_doc/sjfYnXwBVVbJgt24PlVU
+{
+  &quot;title&quot;:&quot;iphon15&quot;
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>说明： 这种更新方式是先删除原始文档，再将更新文档以新的内容插入</p></blockquote><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>POST /products/_doc/sjfYnXwBVVbJgt24PlVU/_update
+{
+    &quot;doc&quot;:{
+        &quot;title&quot;:&quot;iphon15&quot;
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>说明： 这种方式可以将数据原始内容保存，并在此基础上更新</p></blockquote><h4 id="_6-2-5-批量操作" tabindex="-1"><a class="header-anchor" href="#_6-2-5-批量操作"><span>6.2.5 批量操作</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>POST /products/_doc/_bulk # 批量索引两条文档
+{&quot;index&quot;:{&quot;_id&quot;:&quot;1&quot;}}
+{&quot;title&quot;:&quot;iphone14&quot;,&quot;price&quot;:8999.99,&quot;created_at&quot;:&quot;2021-09-15&quot;,&quot;description&quot;:&quot;iPhone 13屏幕采用6.8英寸OLED屏幕&quot;}
+{&quot;index&quot;:{&quot;_id&quot;:&quot;2&quot;}}
+{&quot;title&quot;:&quot;iphone15&quot;,&quot;price&quot;:8999.99,&quot;created_at&quot;:&quot;2021-09-15&quot;,&quot;description&quot;:&quot;iPhone 15屏幕采用10.8英寸OLED屏幕&quot;}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>POST /products/_doc/_bulk #更新文档同时删除文档
+{&quot;update&quot;:{&quot;_id&quot;:&quot;1&quot;}}
+{&quot;doc&quot;:{&quot;title&quot;:&quot;iphone17&quot;}}
+{&quot;delete&quot;:{&quot;_id&quot;:2}}
+{&quot;index&quot;:{}}
+{&quot;title&quot;:&quot;iphone19&quot;,&quot;price&quot;:8999.99,&quot;created_at&quot;:&quot;2021-09-15&quot;,&quot;description&quot;:&quot;iPhone 19 屏幕采用 61.8 英寸 OLED 屏幕&quot;}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>说明： 批量时不会因为一个失败而全部失败，而是继续执行后续操作，在返回时按照执行的状态返回</p></blockquote><h2 id="七-高级查询" tabindex="-1"><a class="header-anchor" href="#七-高级查询"><span>七. 高级查询</span></a></h2><p>ES 中提供了一种强大的检索数据方式，这种检索方式称之为 Query DSL，Query DSL 是利用 Rest Api 传递 JSON 格式的请求体(Request Body)数据与 ES 进行交互，这种方式的丰富查询语法让 ES 检索变得更强大，更简洁</p><h3 id="_7-1-语法" tabindex="-1"><a class="header-anchor" href="#_7-1-语法"><span>7.1 语法</span></a></h3><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /索引名/_doc/_search {json格式请数据}
+GET /索引名/_search {json格式请数据}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-2-测试数据" tabindex="-1"><a class="header-anchor" href="#_7-2-测试数据"><span>7.2 测试数据</span></a></h3><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code># 1.创建索引 映射
+PUT /products/
+{
+  &quot;mappings&quot;: {
+    &quot;properties&quot;: {
+      &quot;title&quot;:{
+        &quot;type&quot;: &quot;keyword&quot;
+      },
+      &quot;price&quot;:{
+        &quot;type&quot;: &quot;double&quot;
+      },
+      &quot;created_at&quot;:{
+        &quot;type&quot;:&quot;date&quot;
+      },
+      &quot;description&quot;:{
+        &quot;type&quot;:&quot;text&quot;
+      }
+    }
+  }
+}
+# 2.测试数据
+PUT /products/_doc/_bulk
+{&quot;index&quot;:{}}
+  {&quot;title&quot;:&quot;iphone12 pro&quot;,&quot;price&quot;:8999,&quot;created_at&quot;:&quot;2020-10-23&quot;,&quot;description&quot;:&quot;iPhone 12 Pro采用超瓷晶面板和亚光质感玻璃背板，搭配不锈钢边框，有银色、石墨色、金色、海蓝色四种颜色。宽度:71.5毫米，高度:146.7毫米，厚度:7.4毫米，重量：187克&quot;}
+{&quot;index&quot;:{}}
+  {&quot;title&quot;:&quot;iphone12&quot;,&quot;price&quot;:4999,&quot;created_at&quot;:&quot;2020-10-23&quot;,&quot;description&quot;:&quot;iPhone 12 高度：146.7毫米；宽度：71.5毫米；厚度：7.4毫米；重量：162克（5.73盎司） [5]  。iPhone 12设计采用了离子玻璃，以及7000系列铝金属外壳。&quot;}
+{&quot;index&quot;:{}}
+  {&quot;title&quot;:&quot;iphone13&quot;,&quot;price&quot;:6000,&quot;created_at&quot;:&quot;2021-09-15&quot;,&quot;description&quot;:&quot;iPhone 13屏幕采用6.1英寸OLED屏幕；高度约146.7毫米，宽度约71.5毫米，厚度约7.65毫米，重量约173克。&quot;}
+{&quot;index&quot;:{}}
+  {&quot;title&quot;:&quot;iphone13 pro&quot;,&quot;price&quot;:8999,&quot;created_at&quot;:&quot;2021-09-15&quot;,&quot;description&quot;:&quot;iPhone 13Pro搭载A15 Bionic芯片，拥有四种配色，支持5G。有128G、256G、512G、1T可选，售价为999美元起。&quot;}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-3-常见检索" tabindex="-1"><a class="header-anchor" href="#_7-3-常见检索"><span>7.3 常见检索</span></a></h3><h4 id="_7-3-1-查询所有-match-all" tabindex="-1"><a class="header-anchor" href="#_7-3-1-查询所有-match-all"><span>7.3.1 查询所有 [match_all]</span></a></h4><blockquote><p>match_all 关键字： 返回索引中的全部文档</p></blockquote><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-2-关键词查询-term" tabindex="-1"><a class="header-anchor" href="#_7-3-2-关键词查询-term"><span>7.3.2 关键词查询 [term]</span></a></h4><blockquote><p>term 关键字: 用来使用关键词查询</p></blockquote><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /product/\_search
+{
+    &quot;query&quot;: {
+        &quot;term&quot;: {
+            &quot;price&quot;: {
+                &quot;value&quot;: 4999
+            }
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>NOTE1: 通过使用 term 查询得知 ES 中默认使用分词器为标准分词器(StandardAnalyzer)，标准分词器对于单词分词，对于中文单字分词 NOTE2: 通过使用 term 查询得知， 在 ES 的 Mapping Type 中，keyword,date,integer,long,double,boolean or ip 这些类型不分词，只有 text 类型分词</p><h4 id="_7-3-3-范围查询-range" tabindex="-1"><a class="header-anchor" href="#_7-3-3-范围查询-range"><span>7.3.3 范围查询 [range]</span></a></h4><p>range 关键字： 用来指定查询指定范围内的文档</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;range&quot;: {
+            &quot;price&quot;: {
+                &quot;gte&quot;: 100,
+                &quot;lte&quot;: 200
+            }
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-4-前缀查询-prefix" tabindex="-1"><a class="header-anchor" href="#_7-3-4-前缀查询-prefix"><span>7.3.4 前缀查询 [prefix]</span></a></h4><p>prefix 关键字：用来指定查询指定前缀的文档</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;prefix&quot;: {
+            &quot;title&quot;: {
+                &quot;value&quot;: &quot;iPhone&quot;
+            }
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-5-通配符查询-wildcard" tabindex="-1"><a class="header-anchor" href="#_7-3-5-通配符查询-wildcard"><span>7.3.5 通配符查询 [wildcard]</span></a></h4><p>wildcard 关键字：通配符查询？用来匹配一个任意字符 *用来匹配多个任意字符</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;wildcard&quot;: {
+            &quot;description&quot;: {
+                &quot;value&quot;: &quot;iphon*&quot;
+            }
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-6-多-id-查询-ids" tabindex="-1"><a class="header-anchor" href="#_7-3-6-多-id-查询-ids"><span>7.3.6 多 ID 查询 [ids]</span></a></h4><p>ids 关键字： 值为数组类型，用来根据一组 id 获取多个对应的文档</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;ids&quot;: {
+            &quot;values&quot;: [
+                &quot;verUq3wBOTjuBizqAegi&quot;,
+                &quot;vurUq3wBOTjuBizqAegk&quot;
+            ]
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-7-模糊查询-fuzzy" tabindex="-1"><a class="header-anchor" href="#_7-3-7-模糊查询-fuzzy"><span>7.3.7 模糊查询 [fuzzy]</span></a></h4><p>fuzzy 关键字： 用来模糊查询指定关键字的文档</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;fuzzy&quot;: {
+            &quot;description&quot;: &quot;手机&quot;
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意： fuzzy 模糊查询 最大模糊词 必须在 0-2 之间</p><ol><li>搜索关键词长度为 2 不允许存在模糊</li><li>搜索关键词长度为 3-5 允许一次模糊</li><li>搜索关键词长度大于 5 允许最大 2 次模糊</li></ol><h4 id="_7-3-8-布尔查询-bool" tabindex="-1"><a class="header-anchor" href="#_7-3-8-布尔查询-bool"><span>7.3.8 布尔查询 [bool]</span></a></h4><ol><li>bool 关键字：用来组合多个条件实现复杂查询</li><li>must: 相当于 &amp;&amp; 同时成立</li><li>should: 相当于 || 满足一个即可</li><li>must_not: 相当于 ! 不成立</li></ol><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;bool&quot;: {
+            &quot;must&quot;: [
+                {
+                    &quot;term&quot;: {
+                        &quot;price&quot;: {
+                            &quot;value&quot;: 4999
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-9-多字段查询-multi-match" tabindex="-1"><a class="header-anchor" href="#_7-3-9-多字段查询-multi-match"><span>7.3.9 多字段查询 [multi_match]</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;multi_match&quot;: {
+            &quot;query&quot;: &quot;小米&quot;,
+            &quot;fields&quot;: [&quot;title&quot;, &quot;description&quot;]
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意： 字段类型分词，将查询条件分词之后进行查询该字段，如果该字段不分词就会将查询条件作为整体进行查询</p><h4 id="_7-3-10-默认字段分词查询-query-string" tabindex="-1"><a class="header-anchor" href="#_7-3-10-默认字段分词查询-query-string"><span>7.3.10 默认字段分词查询 [query_string]</span></a></h4><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;query_string&quot;: {
+            &quot;default_field&quot;: &quot;description&quot;,
+            &quot;query&quot;: &quot;elasticsearch&quot;
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>注意：查询该字段分词就将查询条件分词查询，查询字段不分词将查询条件不分词查询</p><h4 id="_7-3-11-高亮查询-highlight" tabindex="-1"><a class="header-anchor" href="#_7-3-11-高亮查询-highlight"><span>7.3.11 高亮查询 [highlight]</span></a></h4><ol><li>highlight 关键字: 可以让符合条件的文档中的关键字高亮</li></ol><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;term&quot;: {
+            &quot;description&quot;: {
+                &quot;value&quot;: &quot;elasticsearch&quot;
+            }
+        }
+    },
+    &quot;highlight&quot;: {
+        &quot;fields&quot;: {
+            &quot;*&quot;: {}
+        }
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="2"><li>自定义高亮 html 标签: 可以在 highlight 中使用 pre_tags 和 post_tags</li></ol><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;term&quot;: {
+            &quot;description&quot;: {
+                &quot;value&quot;: &quot;elasticsearch&quot;
+            }
+        }
+    },
+    &quot;highlight&quot;: {
+        &quot;fields&quot;: {
+            &quot;*&quot;: {}
+        },
+        &quot;pre_tags&quot;: [&quot;&lt;span style=&#39;color:red&#39;&gt;&quot;],
+        &quot;post_tags&quot;: [&quot;&lt;/span&gt;&quot;]
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol start="3"><li>多字段高亮 使用 require_field_match 开启多个字段高亮</li></ol><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;term&quot;: {
+            &quot;description&quot;: {
+                &quot;value&quot;: &quot;elasticsearch&quot;
+            }
+        }
+    },
+    &quot;highlight&quot;: {
+        &quot;fields&quot;: {
+            &quot;*&quot;: {}
+        },
+        &quot;require_field_match&quot;: false,
+        &quot;pre_tags&quot;: [&quot;&lt;span style=&#39;color:red&#39;&gt;&quot;],
+        &quot;post_tags&quot;: [&quot;&lt;/span&gt;&quot;]
+    }
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-12-返回指定条数-size" tabindex="-1"><a class="header-anchor" href="#_7-3-12-返回指定条数-size"><span>7.3.12 返回指定条数 [size]</span></a></h4><p>size: 指定查询结果返回指定条数。 默认返回值 10 条。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    &quot;size&quot;: 5
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-13-分页查询-from" tabindex="-1"><a class="header-anchor" href="#_7-3-13-分页查询-from"><span>7.3.13 分页查询 [from]</span></a></h4><p>from: 指定查询结果返回的起始位置,和 size 关键字连用可实现分页效果。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    &quot;from&quot;: 10,
+    &quot;size&quot;: 5
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-14-排序-sort" tabindex="-1"><a class="header-anchor" href="#_7-3-14-排序-sort"><span>7.3.14 排序 [sort]</span></a></h4><p>sort: 指定排序字段，默认升序，可以指定排序方式。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    &quot;sort&quot;: [
+        {
+            &quot;price&quot;: {
+                &quot;order&quot;: &quot;desc&quot;
+            }
+        }
+    ]
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_7-3-15-返回指定字段-source" tabindex="-1"><a class="header-anchor" href="#_7-3-15-返回指定字段-source"><span>7.3.15 返回指定字段 [_source]</span></a></h4><p>_source: 指定返回的字段，默认返回全部字段。</p><div class="language-text line-numbers-mode" data-ext="text" data-title="text"><pre class="language-text"><code>GET /products/_search
+{
+    &quot;query&quot;: {
+        &quot;match_all&quot;: {}
+    },
+    &quot;_source&quot;: [&quot;title&quot;, &quot;price&quot;]
+}
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="vp-page-meta"><!----><div class="vp-meta-item git-info"><div class="vp-meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><div class="vp-meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: bineanshi@163.com">go-bineanshi</span><!----><!--]--><!--]--></span></div></div></footer><!----><!--[--><!--]--></main><!--]--></div><!--[--><!----><!--]--><!--]--></div>
+    <script type="module" src="/assets/app-CCeybfeQ.js" defer></script>
+  </body>
+</html>
